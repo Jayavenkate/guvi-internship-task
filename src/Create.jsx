@@ -7,7 +7,7 @@ const Create = () => {
     const handlecreate = async () => {
         console.log('taskname:', task);
         try {
-            const response = await axios.post("http://localhost:4000/create", { task });
+            const response = await axios.post("https://guvi-intership-node.vercel.app/create", { task });
             console.log(response.data)
         } catch (err) {
             console.log(err.message)

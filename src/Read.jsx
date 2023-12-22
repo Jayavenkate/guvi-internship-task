@@ -8,7 +8,7 @@ const Read = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get("http://localhost:4000/read");
+                const response = await axios.get("https://guvi-intership-node.vercel.app/read");
                 setData(response.data);
             } catch (error) {
                 console.error("Error fetching data:", error.message);
@@ -20,9 +20,9 @@ const Read = () => {
 
     const deleteData = async (id) => {
         try {
-            const response = await axios.delete(`http://localhost:4000/${id}`);
+            const response = await axios.delete(`https://guvi-intership-node.vercel.app/${id}`);
             console.log(response.data);
-            const updatedData = await axios.get("http://localhost:4000/read");
+            const updatedData = await axios.get("https://guvi-intership-node.vercel.app/read");
             setData(updatedData.data);
         } catch (err) {
             console.log(err)
@@ -36,11 +36,11 @@ const Read = () => {
 
     const updateData = async () => {
         try {
-            const response = await axios.put(`http://localhost:4000/${selectedId}`, {
+            const response = await axios.put(`https://guvi-intership-node.vercel.app/${selectedId}`, {
                 task: editedTask,
             });
             console.log(response.data);
-            const updatedData = await axios.get("http://localhost:4000/read");
+            const updatedData = await axios.get("https://guvi-intership-node.vercel.app/read");
             setData(updatedData.data);
         } catch (err) {
             console.log(err);
